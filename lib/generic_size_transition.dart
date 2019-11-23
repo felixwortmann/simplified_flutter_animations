@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 
 class GenericSizeTransition extends StatefulWidget {
   final WidgetBuilder builder;
-  final Offset initialOffset;
-  final Offset endOffset;
   final Curve curve;
   final Duration duration;
 
   const GenericSizeTransition({
     Key key,
     @required this.builder,
-    @required this.initialOffset,
-    this.endOffset = Offset.zero,
     this.curve = Curves.decelerate,
     this.duration = const Duration(seconds: 1),
   });
@@ -20,37 +16,34 @@ class GenericSizeTransition extends StatefulWidget {
 }
 
 class _GenericSizeTransitionState extends State<GenericSizeTransition>
-    with TickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Offset> _offsetFloat;
+    with SingleTickerProviderStateMixin {
+  AnimationController controller;
 
   @override
   void initState() {
-    _controller = AnimationController(
+    this.controller = AnimationController(
       vsync: this,
       duration: widget.duration,
     );
-    _offsetFloat =
-        Tween<Offset>(begin: widget.initialOffset, end: widget.endOffset)
-            .animate(
-      CurvedAnimation(parent: _controller, curve: widget.curve),
-    );
 
     super.initState();
-    _controller.forward();
+    this.controller.forward();
   }
 
   @override
   Widget build(BuildContext context) {
-    return SlideTransition(
+    return SizeTransition(
       child: widget.builder(context),
-      position: _offsetFloat,
+      sizeFactor: CurvedAnimation(
+        parent: this.controller,
+        curve: widget.curve,
+      ),
     );
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    this.controller.dispose();
     super.dispose();
   }
 }

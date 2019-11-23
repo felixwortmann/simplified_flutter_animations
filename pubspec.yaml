@@ -1,8 +1,8 @@
-name: flutter_animation_scaffold
+name: simplified_flutter_animations
 description: A new Flutter package project.
 version: 0.0.1
 author: Felix Wortmann <contact@felixwortmann.com>
-homepage: https://github.com/felixwortmann/flutter_animation_scaffold
+homepage: https://github.com/felixwortmann/simple_animation_scaffold
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

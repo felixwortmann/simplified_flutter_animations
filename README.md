@@ -1,1 +1,2 @@
-# flutter_animation_scaffold
+# Flutter Animation Scaffold
+- Scaffold for Animations

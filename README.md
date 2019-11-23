@@ -1,2 +1,2 @@
 # Flutter Animation Scaffold
-- Scaffold for Animations
+- Simplified Animation Framework for Flutter

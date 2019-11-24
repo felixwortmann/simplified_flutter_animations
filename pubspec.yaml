@@ -2,7 +2,7 @@ name: simplified_flutter_animations
 description: An easy way to create basic animations for Widgets when they appear. No messing with AnimationControllers, just pass a Builder and you are ready.
 version: 0.0.2
 author: Felix Wortmann <contact@felixwortmann.com>
-homepage: https://github.com/felixwortmann/simple_animation_scaffold
+homepage: https://github.com/felixwortmann/simplified_flutter_animations
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

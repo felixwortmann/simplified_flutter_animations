@@ -6,8 +6,8 @@ class GenericSizeTransition extends StatefulWidget {
   final Duration duration;
 
   const GenericSizeTransition({
-    Key key,
-    @required this.builder,
+    Key? key,
+    required this.builder,
     this.curve = Curves.decelerate,
     this.duration = const Duration(seconds: 1),
   });
@@ -17,7 +17,7 @@ class GenericSizeTransition extends StatefulWidget {
 
 class _GenericSizeTransitionState extends State<GenericSizeTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController controller;
+  late AnimationController controller;
 
   @override
   void initState() {

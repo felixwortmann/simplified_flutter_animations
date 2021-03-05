@@ -8,9 +8,9 @@ class GenericSlideTransition extends StatefulWidget {
   final Duration duration;
 
   const GenericSlideTransition({
-    Key key,
-    @required this.builder,
-    @required this.initialOffset,
+    Key? key,
+    required this.builder,
+    required this.initialOffset,
     this.endOffset = Offset.zero,
     this.curve = Curves.decelerate,
     this.duration = const Duration(seconds: 1),
@@ -22,8 +22,8 @@ class GenericSlideTransition extends StatefulWidget {
 
 class _GenericSlideTransitionState extends State<GenericSlideTransition>
     with TickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Offset> _offsetFloat;
+  late AnimationController _controller;
+  late Animation<Offset> _offsetFloat;
 
   @override
   void initState() {
